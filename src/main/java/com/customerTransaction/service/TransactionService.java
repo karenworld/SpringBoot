@@ -42,37 +42,6 @@ public class TransactionService {
         return transactionRepository.findAllByCustid(customerId);
     }
     
-
-//    public Transaction getTransactionById(Integer transactionId) {
-//        // Retrieve the transaction from the repository
-//        Transaction transaction = transactionRepository.findById(transactionId);
-//        
-//        // If the transaction is not found, throw the custom NotFoundException
-//        if (transaction == null) {
-//            throw new com.customerTransaction.utility.NotFoundException("Transaction not found with ID: " + transactionId);
-//        }
-//        
-//        return transaction;
-//    }
-
-    //remove updateTransaction to preserve immutability
-//    public Transaction updateTransaction(Integer transactionId, Transaction newTransactionData) {
-//        Transaction existingTransaction = getTransactionById(transactionId);
-//        if(existingTransaction == null)throw new NotFoundException("Transaction not found with ID: " + transactionId);
-//        existingTransaction.setCustId(newTransactionData.getCustId());
-//        existingTransaction.setName(newTransactionData.getName());
-//        existingTransaction.setAmount(newTransactionData.getAmount());
-//        return transactionRepository.save(existingTransaction);
-//    }
-
-    	//remove deleteTransaction to preserve immutability
-//    public void deleteTransaction(Integer transactionId) {
-//    	Transaction transaction = getTransactionById(transactionId);
-//    	if (transaction.getAmount() != 0) {
-//    	    throw new IllegalStateException("Transaction cannot be deleted as the amount is not zero");
-//    	}
-//        transactionRepository.deleteById(transactionId);
-//    }
     
     public Customer getTransactionCustomer(Integer transactionId) {
         Transaction transaction = transactionRepository.findById(transactionId)
